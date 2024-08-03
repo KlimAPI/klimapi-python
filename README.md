@@ -2,7 +2,7 @@
 This API offers you the possibility to calculate and offset emissions, create checkout links, get statistics and much more.
 
 - API version: v2
-- Package version: 1.1.26
+- Package version: 1.1.27
 
 For more information, please visit [https://klimapi.com/resources/docs](https://klimapi.com/resources/docs)
 
@@ -17,9 +17,9 @@ Python 3.7+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/KlimAPI/klimapi-python.git
+pip install klimapi-python
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/KlimAPI/klimapi-python.git`)
+(you may need to run `pip` with root permission: `sudo pip install klimapi-python`)
 
 Then import the package:
 ```python

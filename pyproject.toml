@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "klimapi_python"
-version = "1.1.26"
+version = "1.1.27"
 description = "KlimAPI - Calculation & Compensation API"
 authors = ["KlimAPI Team <tech@klimapi.com>"]
 license = "MIT"
