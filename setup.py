@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 NAME = "klimapi-python"
-VERSION = "1.1.27"
+VERSION = "1.1.28"
 PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.1.0",
@@ -36,7 +36,7 @@ setup(
     description="KlimAPI - Calculation &amp; Compensation API",
     author="KlimAPI Team",
     author_email="tech@klimapi.com",
-    url="https://pypi.org/p/klimapi-python",
+    url="https://github.com/KlimAPI/klimapi-python",
     keywords=["klimapi"],
     install_requires=REQUIRES,
     packages=find_packages(exclude=["test", "tests"]),
