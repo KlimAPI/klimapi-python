@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.1.24"
+__version__ = "1.1.25"
 
 # import apis into sdk package
 from klimapi_python.api.klim_api import KlimApi

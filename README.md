@@ -2,7 +2,7 @@
 This API offers you the possibility to calculate and offset emissions, create checkout links, get statistics and much more.
 
 - API version: v2
-- Package version: 1.1.24
+- Package version: 1.1.25
 
 For more information, please visit [https://klimapi.com/resources/docs](https://klimapi.com/resources/docs)
 
