@@ -31,7 +31,7 @@ class OrderCalculated(BaseModel):
     OrderCalculated
     """ # noqa: E501
     order_id: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
+    status: Optional[StrictStr] = Field(default=None, description="The status of the order")
     certificate_issued_at: Optional[datetime] = Field(default=None, description="Timestamp of when the certificate was issued in ISO 8601 format (UTC)")
     certificate_url: Optional[StrictStr] = None
     certificate_pdf: Optional[StrictStr] = None
@@ -43,6 +43,16 @@ class OrderCalculated(BaseModel):
     results: Optional[List[CalculationResult]] = Field(default=None, description="An array of the calculation results")
     recipient: Optional[OrderRecipient] = None
     __properties: ClassVar[List[str]] = ["order_id", "status", "certificate_issued_at", "certificate_url", "certificate_pdf", "price", "currency", "kgCO2e", "metadata", "project", "results", "recipient"]
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['offer', 'payment_pending', 'offset_pending', 'processed', 'refunded']):
+            raise ValueError("must be one of enum values ('offer', 'payment_pending', 'offset_pending', 'processed', 'refunded')")
+        return value
 
     @field_validator('currency')
     def currency_validate_enum(cls, value):

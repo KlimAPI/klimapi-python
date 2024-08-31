@@ -1,5 +1,6 @@
 # Product
 
+A specific product element
 
 ## Properties
 
@@ -14,7 +15,7 @@ Name | Type | Description | Notes
 **weight** | **float** | The weight of the product | [optional] 
 **weight_unit** | **str** | The weight unit of the product | [optional] [default to 'kg']
 **made_in** | **str** | The country of origin of the product | [optional] 
-**emission_factor** | **str** | Already know the emissions of the given product? Then you can provide the emission factor here. Unit: **kg CO&lt;sub&gt;2&lt;/sub&gt;e** | [optional] 
+**emission_factor** | **str** | Already know the emissions of the given product? Then you can provide the emission factor here. Unit: **kg CO<sub>2</sub>e** | [optional] 
 **emission_multiplicator** | **str** | Include the multiplicator of the given factor. | [optional] 
 
 ## Example

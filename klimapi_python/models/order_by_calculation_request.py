@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
+from klimapi_python.models.pending_by_calculation_request_calculation_options_inner import PendingByCalculationRequestCalculationOptionsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class OrderByCalculationRequest(BaseModel):
     """
     OrderByCalculationRequest
     """ # noqa: E501
-    calculation_options: List[Any] = Field(description="An Array of [Calculation Options](/resources/factors).")
+    calculation_options: List[PendingByCalculationRequestCalculationOptionsInner] = Field(description="An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).")
     recipient_name: Optional[StrictStr] = Field(default=None, description="The name which should be associated with the compensation")
     recipient_email: Optional[StrictStr] = Field(default=None, description="If a valid e-mail address is provided, we will send the certificate to this address")
     send_at: Optional[datetime] = Field(default=None, description="Timestamp of when the certificate should be send to the customer in ISO 8601 format (UTC). Defaults to the current timestamp.")
@@ -76,6 +77,13 @@ class OrderByCalculationRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in calculation_options (list)
+        _items = []
+        if self.calculation_options:
+            for _item in self.calculation_options:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['calculation_options'] = _items
         return _dict
 
     @classmethod
@@ -88,7 +96,7 @@ class OrderByCalculationRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "calculation_options": obj.get("calculation_options"),
+            "calculation_options": [PendingByCalculationRequestCalculationOptionsInner.from_dict(_item) for _item in obj["calculation_options"]] if obj.get("calculation_options") is not None else None,
             "recipient_name": obj.get("recipient_name"),
             "recipient_email": obj.get("recipient_email"),
             "send_at": obj.get("send_at"),

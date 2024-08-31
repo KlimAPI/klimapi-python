@@ -12,7 +12,9 @@ Name | Type | Description | Notes
 **recipient_email** | **str** | The recipient email of the orders you want to receive | [optional] 
 **price** | **float** | The price of the orders you want to receive | [optional] 
 **currency** | **str** | The currency of the orders you want to receive | [optional] 
-**kg_co2e** | **int** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e of the orders you want to receive | [optional] 
+**kg_co2e** | **int** | The amount of kg CO<sub>2</sub>e of the orders you want to receive | [optional] 
+**var_from** | **datetime** | Specify a timeframe for your response in ISO 8601 format (UTC) | [optional] 
+**to** | **datetime** | Specify a timeframe for your response in ISO 8601 format (UTC) | [optional] 
 
 ## Example
 

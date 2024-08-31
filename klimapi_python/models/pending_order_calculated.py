@@ -29,7 +29,7 @@ class PendingOrderCalculated(BaseModel):
     PendingOrderCalculated
     """ # noqa: E501
     order_id: Optional[StrictStr] = None
-    status: Optional[StrictStr] = None
+    status: Optional[StrictStr] = Field(default=None, description="The status of the order")
     price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The total of the compensation in your given currency **excl. VAT**.")
     currency: Optional[StrictStr] = None
     kg_co2e: Optional[StrictInt] = Field(default=None, description="The amount of kg CO<sub>2</sub>e.", alias="kgCO2e")
@@ -37,6 +37,16 @@ class PendingOrderCalculated(BaseModel):
     project: Optional[Project] = None
     results: Optional[List[CalculationResult]] = Field(default=None, description="An array of the calculation results")
     __properties: ClassVar[List[str]] = ["order_id", "status", "price", "currency", "kgCO2e", "metadata", "project", "results"]
+
+    @field_validator('status')
+    def status_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['offer', 'payment_pending', 'offset_pending', 'processed', 'refunded']):
+            raise ValueError("must be one of enum values ('offer', 'payment_pending', 'offset_pending', 'processed', 'refunded')")
+        return value
 
     @field_validator('currency')
     def currency_validate_enum(cls, value):

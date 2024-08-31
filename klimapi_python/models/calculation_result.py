@@ -33,7 +33,9 @@ class CalculationResult(BaseModel):
     detail: Optional[StrictStr] = Field(default=None, description="The detail of the calculation")
     value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The value of the calculation")
     unit: Optional[StrictStr] = Field(default=None, description="The unit of the calculation")
-    __properties: ClassVar[List[str]] = ["kgCO2e", "type", "activity", "specification", "detail", "value", "unit"]
+    emission_factor_id: Optional[StrictStr] = Field(default=None, description="The unique identifier of the emission factor the calculation is based on")
+    emission_factor_last_updated: Optional[StrictStr] = Field(default=None, description="ISO 8601 formatted timestamp of the latest update for the given emission factor")
+    __properties: ClassVar[List[str]] = ["kgCO2e", "type", "activity", "specification", "detail", "value", "unit", "emission_factor_id", "emission_factor_last_updated"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,7 +94,9 @@ class CalculationResult(BaseModel):
             "specification": obj.get("specification"),
             "detail": obj.get("detail"),
             "value": obj.get("value"),
-            "unit": obj.get("unit")
+            "unit": obj.get("unit"),
+            "emission_factor_id": obj.get("emission_factor_id"),
+            "emission_factor_last_updated": obj.get("emission_factor_last_updated")
         })
         return _obj
 

@@ -5,13 +5,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kg_co2e** | **float** | The calculated Amount of CO&lt;sub&gt;2&lt;/sub&gt; in Kilogram. | [optional] 
+**kg_co2e** | **float** | The calculated Amount of CO<sub>2</sub> in Kilogram. | [optional] 
 **type** | **str** | The type of the calculation | [optional] 
 **activity** | **str** | The activity of the calculation | [optional] 
 **specification** | **str** | The specification of the calculation | [optional] 
 **detail** | **str** | The detail of the calculation | [optional] 
 **value** | **float** | The value of the calculation | [optional] 
 **unit** | **str** | The unit of the calculation | [optional] 
+**emission_factor_id** | **str** | The unique identifier of the emission factor the calculation is based on | [optional] 
+**emission_factor_last_updated** | **str** | ISO 8601 formatted timestamp of the latest update for the given emission factor | [optional] 
 
 ## Example
 

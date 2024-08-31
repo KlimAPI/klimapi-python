@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -33,7 +33,18 @@ class LinkByCarbonRequest(BaseModel):
     cancel_url: StrictStr = Field(description="The URL the customer is redirected to after a failed or aborted compensation.")
     order_count: Optional[Annotated[int, Field(le=3, strict=True, ge=1)]] = Field(default=1, description="The amount of pending Orders you want to receive. This is especially useful if you want to offer your customers several different projects for their compensation.")
     metadata: Optional[Dict[str, StrictStr]] = Field(default=None, description="Add additional queryable information to the order as key-value pairs")
-    __properties: ClassVar[List[str]] = ["kgCO2e", "change_allowed", "success_url", "cancel_url", "order_count", "metadata"]
+    payment_type: Optional[StrictStr] = Field(default='default', description="With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card.")
+    __properties: ClassVar[List[str]] = ["kgCO2e", "change_allowed", "success_url", "cancel_url", "order_count", "metadata", "payment_type"]
+
+    @field_validator('payment_type')
+    def payment_type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['default', 'invoice']):
+            raise ValueError("must be one of enum values ('default', 'invoice')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,7 +102,8 @@ class LinkByCarbonRequest(BaseModel):
             "success_url": obj.get("success_url"),
             "cancel_url": obj.get("cancel_url"),
             "order_count": obj.get("order_count") if obj.get("order_count") is not None else 1,
-            "metadata": obj.get("metadata")
+            "metadata": obj.get("metadata"),
+            "payment_type": obj.get("payment_type") if obj.get("payment_type") is not None else 'default'
         })
         return _obj
 

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kg_co2e** | **int** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e the compensation should provide | 
+**kg_co2e** | **int** | The amount of kg CO<sub>2</sub>e the compensation should provide | 
 **order_count** | **int** | The amount of pending Orders you want to receive. This is especially useful if you want to offer your customers several different projects for their compensation. | [optional] [default to 1]
 **metadata** | **Dict[str, str]** | Add additional queryable information to the order as key-value pairs | [optional] 
 

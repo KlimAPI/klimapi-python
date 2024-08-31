@@ -13,18 +13,18 @@ Method | HTTP request | Description
 [**get_payment_link**](KlimApi.md#get_payment_link) | **GET** /orders/link/{payment_link_id} | Get Checkout Link
 [**get_project**](KlimApi.md#get_project) | **GET** /projects/{project_id} | Get Project
 [**get_projects**](KlimApi.md#get_projects) | **GET** /projects | Get all supported Projects
-[**link_by_calculation**](KlimApi.md#link_by_calculation) | **POST** /orders/link/calculate | By calculation
-[**link_by_carbon**](KlimApi.md#link_by_carbon) | **POST** /orders/link/carbon | By carbon
-[**link_by_price**](KlimApi.md#link_by_price) | **POST** /orders/link/price | By price
+[**link_by_calculation**](KlimApi.md#link_by_calculation) | **POST** /orders/link/calculate | By Calculation
+[**link_by_carbon**](KlimApi.md#link_by_carbon) | **POST** /orders/link/carbon | By Carbon
+[**link_by_price**](KlimApi.md#link_by_price) | **POST** /orders/link/price | By Price
 [**me**](KlimApi.md#me) | **GET** /me | Get Authenticated User
-[**order_by_calculation**](KlimApi.md#order_by_calculation) | **POST** /orders/process/calculate | By calculation
-[**order_by_carbon**](KlimApi.md#order_by_carbon) | **POST** /orders/process/carbon | By carbon
-[**order_by_price**](KlimApi.md#order_by_price) | **POST** /orders/process/price | By price
-[**pending_by_calculation**](KlimApi.md#pending_by_calculation) | **POST** /orders/pending/calculate | By calculation
-[**pending_by_carbon**](KlimApi.md#pending_by_carbon) | **POST** /orders/pending/carbon | By carbon
-[**pending_by_price**](KlimApi.md#pending_by_price) | **POST** /orders/pending/price | By price
-[**process**](KlimApi.md#process) | **POST** /orders/{order_id}/process | Process pending Order
-[**process_cart**](KlimApi.md#process_cart) | **POST** /stores/{store_ident}/cart/{order_id}/process | Process cart
+[**order_by_calculation**](KlimApi.md#order_by_calculation) | **POST** /orders/process/calculate | By Calculation
+[**order_by_carbon**](KlimApi.md#order_by_carbon) | **POST** /orders/process/carbon | By Carbon
+[**order_by_price**](KlimApi.md#order_by_price) | **POST** /orders/process/price | By Price
+[**pending_by_calculation**](KlimApi.md#pending_by_calculation) | **POST** /orders/pending/calculate | By Calculation
+[**pending_by_carbon**](KlimApi.md#pending_by_carbon) | **POST** /orders/pending/carbon | By Carbon
+[**pending_by_price**](KlimApi.md#pending_by_price) | **POST** /orders/pending/price | By Price
+[**process**](KlimApi.md#process) | **POST** /orders/{order_id}/process | Process Pending Order
+[**process_cart**](KlimApi.md#process_cart) | **POST** /stores/{store_ident}/cart/{order_id}/process | Process Cart
 [**refund**](KlimApi.md#refund) | **DELETE** /orders/{order_id}/refund | Refund Order
 [**remove_webhook**](KlimApi.md#remove_webhook) | **DELETE** /webhooks/remove | Remove Webhook
 [**sync_bulk_store**](KlimApi.md#sync_bulk_store) | **POST** /stores/{store_ident}/sync/bulk | Sync multiple Products
@@ -105,7 +105,7 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-calculate_request = klimapi_python.CalculateRequest() # CalculateRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
+calculate_request = klimapi_python.CalculateRequest() # CalculateRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
 
 try:
     # Calculate
@@ -123,7 +123,7 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **calculate_request** | [**CalculateRequest**](CalculateRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. |  |
+| **calculate_request** | [**CalculateRequest**](CalculateRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. |  |
 
 ### Return type
 
@@ -164,10 +164,10 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-store_ident = 'store_ident_example' # str | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+store_ident = 'store_ident_example' # str | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 cart_item = [klimapi_python.CartItem()] # List[CartItem] | 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 
 try:
     # Calculate
@@ -185,10 +185,10 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **store_ident** | **str**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident |  |
+| **store_ident** | **str**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident |  |
 | **cart_item** | [**List[CartItem]**](CartItem.md)|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 
 ### Return type
 
@@ -226,7 +226,7 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
     # Get all Categories
@@ -244,7 +244,7 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -268,7 +268,7 @@ except Exception as e:
 
 Get all Certification Authorities
 
-Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
 
 ### Example
 
@@ -389,7 +389,7 @@ from pprint import pprint
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
 order_id = 'order_id_example' # str | You can get the order_id from several endpoints, for example when creating an Order.
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
     # Get Order
@@ -408,7 +408,7 @@ except Exception as e:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **order_id** | **str**| You can get the order_id from several endpoints, for example when creating an Order. |  |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -448,7 +448,7 @@ from pprint import pprint
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
 get_orders_request = klimapi_python.GetOrdersRequest() # GetOrdersRequest | 
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
     # Get Orders
@@ -467,7 +467,7 @@ except Exception as e:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **get_orders_request** | [**GetOrdersRequest**](GetOrdersRequest.md)|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -505,8 +505,8 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-payment_link_id = 'payment_link_id_example' # str | 
-locale = DE # str |  (optional) (default to DE)
+payment_link_id = 'payment_link_id_example' # str | The identifier of the checkout link that you want to be returned.
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
     # Get Checkout Link
@@ -524,8 +524,8 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **payment_link_id** | **str**|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **payment_link_id** | **str**| The identifier of the checkout link that you want to be returned. |  |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -564,7 +564,7 @@ from pprint import pprint
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
 project_id = 'project_id_example' # str | You can get the project_id from several endpoints, for example when creating an Order.
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
     # Get Project
@@ -583,7 +583,7 @@ except Exception as e:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **project_id** | **str**| You can get the project_id from several endpoints, for example when creating an Order. |  |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -621,7 +621,7 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
     # Get all supported Projects
@@ -639,7 +639,7 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -662,7 +662,7 @@ except Exception as e:
 # **link_by_calculation**
 > CheckoutLinksCalculated link_by_calculation(link_by_calculation_request, locale=locale, currency=currency)
 
-By calculation
+By Calculation
 
 **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
@@ -678,12 +678,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-link_by_calculation_request = klimapi_python.LinkByCalculationRequest() # LinkByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+link_by_calculation_request = klimapi_python.LinkByCalculationRequest() # LinkByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 
 try:
-    # By calculation
+    # By Calculation
     api_response = klimapi.link_by_calculation(link_by_calculation_request, locale=locale, currency=currency)
     print("The response of KlimApi->link_by_calculation:\n")
     pprint(api_response)
@@ -698,9 +698,9 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **link_by_calculation_request** | [**LinkByCalculationRequest**](LinkByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. |  |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **link_by_calculation_request** | [**LinkByCalculationRequest**](LinkByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. |  |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 
 ### Return type
 
@@ -725,7 +725,7 @@ except Exception as e:
 # **link_by_carbon**
 > CheckoutLinks link_by_carbon(locale=locale, currency=currency, link_by_carbon_request=link_by_carbon_request)
 
-By carbon
+By Carbon
 
 Get the compensation instantly by kilogram CO2e.
 
@@ -741,12 +741,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 link_by_carbon_request = klimapi_python.LinkByCarbonRequest() # LinkByCarbonRequest |  (optional)
 
 try:
-    # By carbon
+    # By Carbon
     api_response = klimapi.link_by_carbon(locale=locale, currency=currency, link_by_carbon_request=link_by_carbon_request)
     print("The response of KlimApi->link_by_carbon:\n")
     pprint(api_response)
@@ -761,8 +761,8 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 | **link_by_carbon_request** | [**LinkByCarbonRequest**](LinkByCarbonRequest.md)|  | [optional]  |
 
 ### Return type
@@ -787,7 +787,7 @@ except Exception as e:
 # **link_by_price**
 > CheckoutLinks link_by_price(locale=locale, currency=currency, link_by_price_request=link_by_price_request)
 
-By price
+By Price
 
 Get the compensation instantly by price.
 
@@ -803,12 +803,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 link_by_price_request = klimapi_python.LinkByPriceRequest() # LinkByPriceRequest |  (optional)
 
 try:
-    # By price
+    # By Price
     api_response = klimapi.link_by_price(locale=locale, currency=currency, link_by_price_request=link_by_price_request)
     print("The response of KlimApi->link_by_price:\n")
     pprint(api_response)
@@ -823,8 +823,8 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 | **link_by_price_request** | [**LinkByPriceRequest**](LinkByPriceRequest.md)|  | [optional]  |
 
 ### Return type
@@ -899,7 +899,7 @@ This endpoint does not need any parameter.
 # **order_by_calculation**
 > OrderCalculated order_by_calculation(order_by_calculation_request, locale=locale, currency=currency)
 
-By calculation
+By Calculation
 
 **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
@@ -915,12 +915,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-order_by_calculation_request = klimapi_python.OrderByCalculationRequest() # OrderByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+order_by_calculation_request = klimapi_python.OrderByCalculationRequest() # OrderByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 
 try:
-    # By calculation
+    # By Calculation
     api_response = klimapi.order_by_calculation(order_by_calculation_request, locale=locale, currency=currency)
     print("The response of KlimApi->order_by_calculation:\n")
     pprint(api_response)
@@ -935,9 +935,9 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **order_by_calculation_request** | [**OrderByCalculationRequest**](OrderByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. |  |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **order_by_calculation_request** | [**OrderByCalculationRequest**](OrderByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. |  |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 
 ### Return type
 
@@ -954,7 +954,7 @@ except Exception as e:
 | **200** | Successfully got an Order |  -  |
 | **400** | Your request is invalid, please check the given parameters |  -  |
 | **401** | Your API Key is invalid, deactivated or your account has been suspended |  -  |
-| **406** | The Request exceeds the given &lt;code&gt;price_limit&lt;/code&gt; |  -  |
+| **406** | The Request exceeds the given &#x60;price_limit&#x60; |  -  |
 | **422** | Unknown calculation parameter |  -  |
 | **503** | Order exceeds default stock limit. Contact us for larger orders and to increase the inventory limit for your API requests |  -  |
 
@@ -963,7 +963,7 @@ except Exception as e:
 # **order_by_carbon**
 > Order order_by_carbon(locale=locale, currency=currency, buy_amount=buy_amount)
 
-By carbon
+By Carbon
 
 Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
 
@@ -979,12 +979,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 buy_amount = klimapi_python.BuyAmount() # BuyAmount |  (optional)
 
 try:
-    # By carbon
+    # By Carbon
     api_response = klimapi.order_by_carbon(locale=locale, currency=currency, buy_amount=buy_amount)
     print("The response of KlimApi->order_by_carbon:\n")
     pprint(api_response)
@@ -999,8 +999,8 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 | **buy_amount** | [**BuyAmount**](BuyAmount.md)|  | [optional]  |
 
 ### Return type
@@ -1018,7 +1018,7 @@ except Exception as e:
 | **200** | Successfully got an Order |  -  |
 | **400** | Your request is invalid, please check the given parameters |  -  |
 | **401** | Your API Key is invalid, deactivated or your account has been suspended |  -  |
-| **406** | The Request exceeds the given &lt;code&gt;price_limit&lt;/code&gt; |  -  |
+| **406** | The Request exceeds the given &#x60;price_limit&#x60; |  -  |
 | **503** | Order exceeds default stock limit. Contact us for larger orders and to increase the inventory limit for your API requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -1026,7 +1026,7 @@ except Exception as e:
 # **order_by_price**
 > Order order_by_price(locale=locale, currency=currency, buy_price=buy_price)
 
-By price
+By Price
 
 Get the compensation instantly by price. For this route the API key has no limits.
 
@@ -1042,12 +1042,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 buy_price = klimapi_python.BuyPrice() # BuyPrice |  (optional)
 
 try:
-    # By price
+    # By Price
     api_response = klimapi.order_by_price(locale=locale, currency=currency, buy_price=buy_price)
     print("The response of KlimApi->order_by_price:\n")
     pprint(api_response)
@@ -1062,8 +1062,8 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 | **buy_price** | [**BuyPrice**](BuyPrice.md)|  | [optional]  |
 
 ### Return type
@@ -1088,7 +1088,7 @@ except Exception as e:
 # **pending_by_calculation**
 > PendingOrdersCalculated pending_by_calculation(pending_by_calculation_request, locale=locale, currency=currency)
 
-By calculation
+By Calculation
 
 **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
@@ -1104,12 +1104,12 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-pending_by_calculation_request = klimapi_python.PendingByCalculationRequest() # PendingByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+pending_by_calculation_request = klimapi_python.PendingByCalculationRequest() # PendingByCalculationRequest | Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 
 try:
-    # By calculation
+    # By Calculation
     api_response = klimapi.pending_by_calculation(pending_by_calculation_request, locale=locale, currency=currency)
     print("The response of KlimApi->pending_by_calculation:\n")
     pprint(api_response)
@@ -1124,9 +1124,9 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **pending_by_calculation_request** | [**PendingByCalculationRequest**](PendingByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. |  |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **pending_by_calculation_request** | [**PendingByCalculationRequest**](PendingByCalculationRequest.md)| Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. |  |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 
 ### Return type
 
@@ -1151,7 +1151,7 @@ except Exception as e:
 # **pending_by_carbon**
 > PendingOrders pending_by_carbon(pending_by_carbon_request, locale=locale, currency=currency)
 
-By carbon
+By Carbon
 
 Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
 
@@ -1168,11 +1168,11 @@ from pprint import pprint
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
 pending_by_carbon_request = klimapi_python.PendingByCarbonRequest() # PendingByCarbonRequest | 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 
 try:
-    # By carbon
+    # By Carbon
     api_response = klimapi.pending_by_carbon(pending_by_carbon_request, locale=locale, currency=currency)
     print("The response of KlimApi->pending_by_carbon:\n")
     pprint(api_response)
@@ -1188,8 +1188,8 @@ except Exception as e:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pending_by_carbon_request** | [**PendingByCarbonRequest**](PendingByCarbonRequest.md)|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 
 ### Return type
 
@@ -1214,7 +1214,7 @@ except Exception as e:
 # **pending_by_price**
 > PendingOrders pending_by_price(pending_by_price_request, locale=locale, currency=currency)
 
-By price
+By Price
 
 Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
 
@@ -1231,11 +1231,11 @@ from pprint import pprint
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
 pending_by_price_request = klimapi_python.PendingByPriceRequest() # PendingByPriceRequest | 
-locale = DE # str |  (optional) (default to DE)
-currency = EUR # str |  (optional) (default to EUR)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
+currency = EUR # str | The currency of the returned offset price (optional) (default to EUR)
 
 try:
-    # By price
+    # By Price
     api_response = klimapi.pending_by_price(pending_by_price_request, locale=locale, currency=currency)
     print("The response of KlimApi->pending_by_price:\n")
     pprint(api_response)
@@ -1251,8 +1251,8 @@ except Exception as e:
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **pending_by_price_request** | [**PendingByPriceRequest**](PendingByPriceRequest.md)|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
-| **currency** | **str**|  | [optional] [default to EUR] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
+| **currency** | **str**| The currency of the returned offset price | [optional] [default to EUR] |
 
 ### Return type
 
@@ -1277,7 +1277,7 @@ except Exception as e:
 # **process**
 > Order process(order_id, process_order, locale=locale)
 
-Process pending Order
+Process Pending Order
 
 You accepted the given order. You may now show a confirmation or provide the link to the certificate.
 
@@ -1295,10 +1295,10 @@ klimapi = klimapi_python.KlimApi('your-private-api-key')
 
 order_id = 'order_id_example' # str | The order id specified in the Order
 process_order = klimapi_python.ProcessOrder() # ProcessOrder | 
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
-    # Process pending Order
+    # Process Pending Order
     api_response = klimapi.process(order_id, process_order, locale=locale)
     print("The response of KlimApi->process:\n")
     pprint(api_response)
@@ -1315,7 +1315,7 @@ except Exception as e:
 | ------------- | ------------- | ------------- | ------------- |
 | **order_id** | **str**| The order id specified in the Order |  |
 | **process_order** | [**ProcessOrder**](ProcessOrder.md)|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -1338,9 +1338,9 @@ except Exception as e:
 # **process_cart**
 > Order process_cart(store_ident, order_id, process_order, locale=locale)
 
-Process cart
+Process Cart
 
-
+Process a given cart to offset the cart's emissions
 
 ### Example
 
@@ -1354,13 +1354,13 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-store_ident = 'store_ident_example' # str | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+store_ident = 'store_ident_example' # str | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 order_id = 'order_id_example' # str | The order id specified in the Order
 process_order = klimapi_python.ProcessOrder() # ProcessOrder | 
-locale = DE # str |  (optional) (default to DE)
+locale = DE # str | The locale in which the response should be returned (optional) (default to DE)
 
 try:
-    # Process cart
+    # Process Cart
     api_response = klimapi.process_cart(store_ident, order_id, process_order, locale=locale)
     print("The response of KlimApi->process_cart:\n")
     pprint(api_response)
@@ -1375,10 +1375,10 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **store_ident** | **str**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident |  |
+| **store_ident** | **str**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident |  |
 | **order_id** | **str**| The order id specified in the Order |  |
 | **process_order** | [**ProcessOrder**](ProcessOrder.md)|  |  |
-| **locale** | **str**|  | [optional] [default to DE] |
+| **locale** | **str**| The locale in which the response should be returned | [optional] [default to DE] |
 
 ### Return type
 
@@ -1524,7 +1524,7 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-store_ident = 'store_ident_example' # str | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+store_ident = 'store_ident_example' # str | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 product = [klimapi_python.Product()] # List[Product] | 
 
 try:
@@ -1541,7 +1541,7 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **store_ident** | **str**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident |  |
+| **store_ident** | **str**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident |  |
 | **product** | [**List[Product]**](Product.md)|  |  |
 
 ### Return type
@@ -1582,7 +1582,7 @@ from pprint import pprint
 
 klimapi = klimapi_python.KlimApi('your-private-api-key')
 
-store_ident = 'store_ident_example' # str | Setup a new store **[here](/dashboard/ecommerce)** to get a store ident
+store_ident = 'store_ident_example' # str | Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident
 product = klimapi_python.Product() # Product | 
 
 try:
@@ -1599,7 +1599,7 @@ except Exception as e:
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **store_ident** | **str**| Setup a new store **[here](/dashboard/ecommerce)** to get a store ident |  |
+| **store_ident** | **str**| Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident |  |
 | **product** | [**Product**](Product.md)|  |  |
 
 ### Return type

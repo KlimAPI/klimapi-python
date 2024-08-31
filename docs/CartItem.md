@@ -1,5 +1,6 @@
 # CartItem
 
+An item in the cart of a specific customer
 
 ## Properties
 

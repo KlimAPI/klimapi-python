@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **product_id** | **str** | A unique identifier for the product | [optional] 
 **source** | **str** | The source of the calculation | [optional] 
-**kg_co2e** | **float** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e calculated for the given product. | [optional] 
+**kg_co2e** | **float** | The amount of kg CO<sub>2</sub>e calculated for the given product. | [optional] 
 
 ## Example
 

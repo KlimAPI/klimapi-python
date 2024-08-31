@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kg_co2e** | **float** | The calculated Amount of CO&lt;sub&gt;2&lt;/sub&gt; in Kilogram. | [optional] 
+**kg_co2e** | **float** | The calculated Amount of CO<sub>2</sub> in Kilogram. | [optional] 
 **calculation_id** | **str** | The unique identifier of the calculation | [optional] 
 **results** | [**List[CalculationResult]**](CalculationResult.md) |  | [optional] 
 

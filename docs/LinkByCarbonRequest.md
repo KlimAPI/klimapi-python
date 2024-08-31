@@ -5,12 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kg_co2e** | **int** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e the compensation should provide | 
+**kg_co2e** | **int** | The amount of kg CO<sub>2</sub>e the compensation should provide | 
 **change_allowed** | **bool** | Choose if the customer should be allowed to change the amount. | [optional] [default to False]
 **success_url** | **str** | The URL the customer is redirected to after the successful compensation. | 
 **cancel_url** | **str** | The URL the customer is redirected to after a failed or aborted compensation. | 
 **order_count** | **int** | The amount of pending Orders you want to receive. This is especially useful if you want to offer your customers several different projects for their compensation. | [optional] [default to 1]
 **metadata** | **Dict[str, str]** | Add additional queryable information to the order as key-value pairs | [optional] 
+**payment_type** | **str** | With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card. | [optional] [default to 'default']
 
 ## Example
 

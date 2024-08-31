@@ -24,7 +24,7 @@ from typing_extensions import Self
 
 class Product(BaseModel):
     """
-    Product
+    A specific product element
     """ # noqa: E501
     product_id: StrictStr = Field(description="A unique identifier for the product")
     name: Optional[StrictStr] = Field(default=None, description="The name of the product")

@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **order_id** | **str** |  | [optional] 
-**status** | **str** |  | [optional] 
+**status** | **str** | The status of the order | [optional] 
 **price** | **float** | The total of the compensation in your given currency **excl. VAT**. | [optional] 
 **currency** | **str** |  | [optional] 
-**kg_co2e** | **int** | The amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e. | [optional] 
+**kg_co2e** | **int** | The amount of kg CO<sub>2</sub>e. | [optional] 
 **metadata** | **Dict[str, str]** | Add additional queryable information to the order as key-value pairs | [optional] 
 **project** | [**Project**](Project.md) |  | [optional] 
 **results** | [**List[CalculationResult]**](CalculationResult.md) | An array of the calculation results | [optional] 

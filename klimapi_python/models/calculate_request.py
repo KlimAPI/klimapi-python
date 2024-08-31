@@ -20,6 +20,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from klimapi_python.models.pending_by_calculation_request_calculation_options_inner import PendingByCalculationRequestCalculationOptionsInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class CalculateRequest(BaseModel):
     """
     CalculateRequest
     """ # noqa: E501
-    calculation_options: List[Any] = Field(description="An Array of [Calculation Options](/resources/factors).")
+    calculation_options: List[PendingByCalculationRequestCalculationOptionsInner] = Field(description="An Array of [Calculation Options](https://klimapi.com/resources/factors). See the full list of supported options [here](https://klimapi.com/resources/factors).")
     fractional_digits: Optional[Annotated[int, Field(strict=True, ge=0)]] = Field(default=2, description="Normally, the calculation results are rounded to the nearest whole number. Specify here how many decimal places you would like to receive in addition. This only applies to calculation results, compensations are always made in whole kilograms")
     __properties: ClassVar[List[str]] = ["calculation_options", "fractional_digits"]
 
@@ -70,6 +71,13 @@ class CalculateRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in calculation_options (list)
+        _items = []
+        if self.calculation_options:
+            for _item in self.calculation_options:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['calculation_options'] = _items
         return _dict
 
     @classmethod
@@ -82,7 +90,7 @@ class CalculateRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "calculation_options": obj.get("calculation_options"),
+            "calculation_options": [PendingByCalculationRequestCalculationOptionsInner.from_dict(_item) for _item in obj["calculation_options"]] if obj.get("calculation_options") is not None else None,
             "fractional_digits": obj.get("fractional_digits") if obj.get("fractional_digits") is not None else 2
         })
         return _obj

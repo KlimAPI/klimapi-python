@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
@@ -33,7 +34,9 @@ class GetOrdersRequestFilters(BaseModel):
     price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The price of the orders you want to receive")
     currency: Optional[StrictStr] = Field(default=None, description="The currency of the orders you want to receive")
     kg_co2e: Optional[StrictInt] = Field(default=None, description="The amount of kg CO<sub>2</sub>e of the orders you want to receive", alias="kgCO2e")
-    __properties: ClassVar[List[str]] = ["metadata", "status", "recipient_name", "recipient_email", "price", "currency", "kgCO2e"]
+    var_from: Optional[datetime] = Field(default=None, description="Specify a timeframe for your response in ISO 8601 format (UTC)", alias="from")
+    to: Optional[datetime] = Field(default=None, description="Specify a timeframe for your response in ISO 8601 format (UTC)")
+    __properties: ClassVar[List[str]] = ["metadata", "status", "recipient_name", "recipient_email", "price", "currency", "kgCO2e", "from", "to"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -41,8 +44,8 @@ class GetOrdersRequestFilters(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['pending', 'processed', 'refunded']):
-            raise ValueError("must be one of enum values ('pending', 'processed', 'refunded')")
+        if value not in set(['offer', 'payment_pending', 'offset_pending', 'processed', 'refunded']):
+            raise ValueError("must be one of enum values ('offer', 'payment_pending', 'offset_pending', 'processed', 'refunded')")
         return value
 
     @field_validator('currency')
@@ -112,7 +115,9 @@ class GetOrdersRequestFilters(BaseModel):
             "recipient_email": obj.get("recipient_email"),
             "price": obj.get("price"),
             "currency": obj.get("currency"),
-            "kgCO2e": obj.get("kgCO2e")
+            "kgCO2e": obj.get("kgCO2e"),
+            "from": obj.get("from"),
+            "to": obj.get("to")
         })
         return _obj
 

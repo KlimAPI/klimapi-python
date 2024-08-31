@@ -350,7 +350,7 @@ class KlimApi:
     @validate_call
     def calculate(
         self,
-        calculate_request: Annotated[CalculateRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
+        calculate_request: Annotated[CalculateRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -368,7 +368,7 @@ class KlimApi:
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param calculate_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param calculate_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type calculate_request: CalculateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -421,7 +421,7 @@ class KlimApi:
     @validate_call
     def calculate_with_http_info(
         self,
-        calculate_request: Annotated[CalculateRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
+        calculate_request: Annotated[CalculateRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -439,7 +439,7 @@ class KlimApi:
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param calculate_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param calculate_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type calculate_request: CalculateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -492,7 +492,7 @@ class KlimApi:
     @validate_call
     def calculate_without_preload_content(
         self,
-        calculate_request: Annotated[CalculateRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
+        calculate_request: Annotated[CalculateRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -510,7 +510,7 @@ class KlimApi:
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param calculate_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param calculate_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type calculate_request: CalculateRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -633,10 +633,10 @@ class KlimApi:
     @validate_call
     def calculate_cart(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         cart_item: List[CartItem],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -654,13 +654,13 @@ class KlimApi:
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param cart_item: (required)
         :type cart_item: List[CartItem]
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -714,10 +714,10 @@ class KlimApi:
     @validate_call
     def calculate_cart_with_http_info(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         cart_item: List[CartItem],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -735,13 +735,13 @@ class KlimApi:
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param cart_item: (required)
         :type cart_item: List[CartItem]
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -795,10 +795,10 @@ class KlimApi:
     @validate_call
     def calculate_cart_without_preload_content(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         cart_item: List[CartItem],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -816,13 +816,13 @@ class KlimApi:
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param cart_item: (required)
         :type cart_item: List[CartItem]
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -956,7 +956,7 @@ class KlimApi:
     @validate_call
     def get_categories(
         self,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -974,7 +974,7 @@ class KlimApi:
 
         Use the method to get all activated categories for the given API key.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1024,7 +1024,7 @@ class KlimApi:
     @validate_call
     def get_categories_with_http_info(
         self,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1042,7 +1042,7 @@ class KlimApi:
 
         Use the method to get all activated categories for the given API key.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1092,7 +1092,7 @@ class KlimApi:
     @validate_call
     def get_categories_without_preload_content(
         self,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1110,7 +1110,7 @@ class KlimApi:
 
         Use the method to get all activated categories for the given API key.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1232,7 +1232,7 @@ class KlimApi:
     ) -> List[CertificationAuthority]:
         """Get all Certification Authorities
 
-        Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+        Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1296,7 +1296,7 @@ class KlimApi:
     ) -> ApiResponse[List[CertificationAuthority]]:
         """Get all Certification Authorities
 
-        Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+        Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1360,7 +1360,7 @@ class KlimApi:
     ) -> RESTResponseType:
         """Get all Certification Authorities
 
-        Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](/portfolio).
+        Use this endpoint to get all external certification authorities we are using for our compensation projects. Learn more about our [Portfolio](https://klimapi.com/portfolio).
 
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1738,7 +1738,7 @@ class KlimApi:
     def get_order(
         self,
         order_id: Annotated[StrictStr, Field(description="You can get the order_id from several endpoints, for example when creating an Order.")],
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1758,7 +1758,7 @@ class KlimApi:
 
         :param order_id: You can get the order_id from several endpoints, for example when creating an Order. (required)
         :type order_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1811,7 +1811,7 @@ class KlimApi:
     def get_order_with_http_info(
         self,
         order_id: Annotated[StrictStr, Field(description="You can get the order_id from several endpoints, for example when creating an Order.")],
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1831,7 +1831,7 @@ class KlimApi:
 
         :param order_id: You can get the order_id from several endpoints, for example when creating an Order. (required)
         :type order_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1884,7 +1884,7 @@ class KlimApi:
     def get_order_without_preload_content(
         self,
         order_id: Annotated[StrictStr, Field(description="You can get the order_id from several endpoints, for example when creating an Order.")],
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1904,7 +1904,7 @@ class KlimApi:
 
         :param order_id: You can get the order_id from several endpoints, for example when creating an Order. (required)
         :type order_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2017,7 +2017,7 @@ class KlimApi:
     def get_orders(
         self,
         get_orders_request: GetOrdersRequest,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2037,7 +2037,7 @@ class KlimApi:
 
         :param get_orders_request:  (required)
         :type get_orders_request: GetOrdersRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2090,7 +2090,7 @@ class KlimApi:
     def get_orders_with_http_info(
         self,
         get_orders_request: GetOrdersRequest,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2110,7 +2110,7 @@ class KlimApi:
 
         :param get_orders_request:  (required)
         :type get_orders_request: GetOrdersRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2163,7 +2163,7 @@ class KlimApi:
     def get_orders_without_preload_content(
         self,
         get_orders_request: GetOrdersRequest,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2183,7 +2183,7 @@ class KlimApi:
 
         :param get_orders_request:  (required)
         :type get_orders_request: GetOrdersRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2308,8 +2308,8 @@ class KlimApi:
     @validate_call
     def get_payment_link(
         self,
-        payment_link_id: StrictStr,
-        locale: Optional[StrictStr] = None,
+        payment_link_id: Annotated[StrictStr, Field(description="The identifier of the checkout link that you want to be returned.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2327,9 +2327,9 @@ class KlimApi:
 
         Here you can request information about a specific Checkout Link.
 
-        :param payment_link_id: (required)
+        :param payment_link_id: The identifier of the checkout link that you want to be returned. (required)
         :type payment_link_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2381,8 +2381,8 @@ class KlimApi:
     @validate_call
     def get_payment_link_with_http_info(
         self,
-        payment_link_id: StrictStr,
-        locale: Optional[StrictStr] = None,
+        payment_link_id: Annotated[StrictStr, Field(description="The identifier of the checkout link that you want to be returned.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2400,9 +2400,9 @@ class KlimApi:
 
         Here you can request information about a specific Checkout Link.
 
-        :param payment_link_id: (required)
+        :param payment_link_id: The identifier of the checkout link that you want to be returned. (required)
         :type payment_link_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2454,8 +2454,8 @@ class KlimApi:
     @validate_call
     def get_payment_link_without_preload_content(
         self,
-        payment_link_id: StrictStr,
-        locale: Optional[StrictStr] = None,
+        payment_link_id: Annotated[StrictStr, Field(description="The identifier of the checkout link that you want to be returned.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2473,9 +2473,9 @@ class KlimApi:
 
         Here you can request information about a specific Checkout Link.
 
-        :param payment_link_id: (required)
+        :param payment_link_id: The identifier of the checkout link that you want to be returned. (required)
         :type payment_link_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2588,7 +2588,7 @@ class KlimApi:
     def get_project(
         self,
         project_id: Annotated[StrictStr, Field(description="You can get the project_id from several endpoints, for example when creating an Order.")],
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2608,7 +2608,7 @@ class KlimApi:
 
         :param project_id: You can get the project_id from several endpoints, for example when creating an Order. (required)
         :type project_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2661,7 +2661,7 @@ class KlimApi:
     def get_project_with_http_info(
         self,
         project_id: Annotated[StrictStr, Field(description="You can get the project_id from several endpoints, for example when creating an Order.")],
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2681,7 +2681,7 @@ class KlimApi:
 
         :param project_id: You can get the project_id from several endpoints, for example when creating an Order. (required)
         :type project_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2734,7 +2734,7 @@ class KlimApi:
     def get_project_without_preload_content(
         self,
         project_id: Annotated[StrictStr, Field(description="You can get the project_id from several endpoints, for example when creating an Order.")],
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2754,7 +2754,7 @@ class KlimApi:
 
         :param project_id: You can get the project_id from several endpoints, for example when creating an Order. (required)
         :type project_id: str
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2866,7 +2866,7 @@ class KlimApi:
     @validate_call
     def get_projects(
         self,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2884,7 +2884,7 @@ class KlimApi:
 
         Get all projects you supported with the given API key.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2935,7 +2935,7 @@ class KlimApi:
     @validate_call
     def get_projects_with_http_info(
         self,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2953,7 +2953,7 @@ class KlimApi:
 
         Get all projects you supported with the given API key.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3004,7 +3004,7 @@ class KlimApi:
     @validate_call
     def get_projects_without_preload_content(
         self,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3022,7 +3022,7 @@ class KlimApi:
 
         Get all projects you supported with the given API key.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3130,9 +3130,9 @@ class KlimApi:
     @validate_call
     def link_by_calculation(
         self,
-        link_by_calculation_request: Annotated[LinkByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        link_by_calculation_request: Annotated[LinkByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3146,15 +3146,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CheckoutLinksCalculated:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param link_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param link_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type link_by_calculation_request: LinkByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3209,9 +3209,9 @@ class KlimApi:
     @validate_call
     def link_by_calculation_with_http_info(
         self,
-        link_by_calculation_request: Annotated[LinkByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        link_by_calculation_request: Annotated[LinkByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3225,15 +3225,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CheckoutLinksCalculated]:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param link_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param link_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type link_by_calculation_request: LinkByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3288,9 +3288,9 @@ class KlimApi:
     @validate_call
     def link_by_calculation_without_preload_content(
         self,
-        link_by_calculation_request: Annotated[LinkByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        link_by_calculation_request: Annotated[LinkByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -3304,15 +3304,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param link_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param link_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type link_by_calculation_request: LinkByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -3443,8 +3443,8 @@ class KlimApi:
     @validate_call
     def link_by_carbon(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         link_by_carbon_request: Optional[LinkByCarbonRequest] = None,
         _request_timeout: Union[
             None,
@@ -3459,13 +3459,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CheckoutLinks:
-        """By carbon
+        """By Carbon
 
         Get the compensation instantly by kilogram CO2e.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param link_by_carbon_request:
         :type link_by_carbon_request: LinkByCarbonRequest
@@ -3521,8 +3521,8 @@ class KlimApi:
     @validate_call
     def link_by_carbon_with_http_info(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         link_by_carbon_request: Optional[LinkByCarbonRequest] = None,
         _request_timeout: Union[
             None,
@@ -3537,13 +3537,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CheckoutLinks]:
-        """By carbon
+        """By Carbon
 
         Get the compensation instantly by kilogram CO2e.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param link_by_carbon_request:
         :type link_by_carbon_request: LinkByCarbonRequest
@@ -3599,8 +3599,8 @@ class KlimApi:
     @validate_call
     def link_by_carbon_without_preload_content(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         link_by_carbon_request: Optional[LinkByCarbonRequest] = None,
         _request_timeout: Union[
             None,
@@ -3615,13 +3615,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By carbon
+        """By Carbon
 
         Get the compensation instantly by kilogram CO2e.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param link_by_carbon_request:
         :type link_by_carbon_request: LinkByCarbonRequest
@@ -3753,8 +3753,8 @@ class KlimApi:
     @validate_call
     def link_by_price(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         link_by_price_request: Optional[LinkByPriceRequest] = None,
         _request_timeout: Union[
             None,
@@ -3769,13 +3769,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> CheckoutLinks:
-        """By price
+        """By Price
 
         Get the compensation instantly by price.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param link_by_price_request:
         :type link_by_price_request: LinkByPriceRequest
@@ -3831,8 +3831,8 @@ class KlimApi:
     @validate_call
     def link_by_price_with_http_info(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         link_by_price_request: Optional[LinkByPriceRequest] = None,
         _request_timeout: Union[
             None,
@@ -3847,13 +3847,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[CheckoutLinks]:
-        """By price
+        """By Price
 
         Get the compensation instantly by price.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param link_by_price_request:
         :type link_by_price_request: LinkByPriceRequest
@@ -3909,8 +3909,8 @@ class KlimApi:
     @validate_call
     def link_by_price_without_preload_content(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         link_by_price_request: Optional[LinkByPriceRequest] = None,
         _request_timeout: Union[
             None,
@@ -3925,13 +3925,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By price
+        """By Price
 
         Get the compensation instantly by price.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param link_by_price_request:
         :type link_by_price_request: LinkByPriceRequest
@@ -4309,9 +4309,9 @@ class KlimApi:
     @validate_call
     def order_by_calculation(
         self,
-        order_by_calculation_request: Annotated[OrderByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        order_by_calculation_request: Annotated[OrderByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4325,15 +4325,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> OrderCalculated:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param order_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param order_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type order_by_calculation_request: OrderByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4389,9 +4389,9 @@ class KlimApi:
     @validate_call
     def order_by_calculation_with_http_info(
         self,
-        order_by_calculation_request: Annotated[OrderByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        order_by_calculation_request: Annotated[OrderByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4405,15 +4405,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[OrderCalculated]:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param order_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param order_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type order_by_calculation_request: OrderByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4469,9 +4469,9 @@ class KlimApi:
     @validate_call
     def order_by_calculation_without_preload_content(
         self,
-        order_by_calculation_request: Annotated[OrderByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        order_by_calculation_request: Annotated[OrderByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -4485,15 +4485,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param order_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param order_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type order_by_calculation_request: OrderByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -4625,8 +4625,8 @@ class KlimApi:
     @validate_call
     def order_by_carbon(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         buy_amount: Optional[BuyAmount] = None,
         _request_timeout: Union[
             None,
@@ -4641,13 +4641,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Order:
-        """By carbon
+        """By Carbon
 
         Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param buy_amount:
         :type buy_amount: BuyAmount
@@ -4704,8 +4704,8 @@ class KlimApi:
     @validate_call
     def order_by_carbon_with_http_info(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         buy_amount: Optional[BuyAmount] = None,
         _request_timeout: Union[
             None,
@@ -4720,13 +4720,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Order]:
-        """By carbon
+        """By Carbon
 
         Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param buy_amount:
         :type buy_amount: BuyAmount
@@ -4783,8 +4783,8 @@ class KlimApi:
     @validate_call
     def order_by_carbon_without_preload_content(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         buy_amount: Optional[BuyAmount] = None,
         _request_timeout: Union[
             None,
@@ -4799,13 +4799,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By carbon
+        """By Carbon
 
         Get the compensation instantly by kilogram CO2e. For this route the API key has no limits.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param buy_amount:
         :type buy_amount: BuyAmount
@@ -4938,8 +4938,8 @@ class KlimApi:
     @validate_call
     def order_by_price(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         buy_price: Optional[BuyPrice] = None,
         _request_timeout: Union[
             None,
@@ -4954,13 +4954,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Order:
-        """By price
+        """By Price
 
         Get the compensation instantly by price. For this route the API key has no limits.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param buy_price:
         :type buy_price: BuyPrice
@@ -5016,8 +5016,8 @@ class KlimApi:
     @validate_call
     def order_by_price_with_http_info(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         buy_price: Optional[BuyPrice] = None,
         _request_timeout: Union[
             None,
@@ -5032,13 +5032,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Order]:
-        """By price
+        """By Price
 
         Get the compensation instantly by price. For this route the API key has no limits.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param buy_price:
         :type buy_price: BuyPrice
@@ -5094,8 +5094,8 @@ class KlimApi:
     @validate_call
     def order_by_price_without_preload_content(
         self,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         buy_price: Optional[BuyPrice] = None,
         _request_timeout: Union[
             None,
@@ -5110,13 +5110,13 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By price
+        """By Price
 
         Get the compensation instantly by price. For this route the API key has no limits.
 
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param buy_price:
         :type buy_price: BuyPrice
@@ -5248,9 +5248,9 @@ class KlimApi:
     @validate_call
     def pending_by_calculation(
         self,
-        pending_by_calculation_request: Annotated[PendingByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        pending_by_calculation_request: Annotated[PendingByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5264,15 +5264,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PendingOrdersCalculated:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param pending_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param pending_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type pending_by_calculation_request: PendingByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5327,9 +5327,9 @@ class KlimApi:
     @validate_call
     def pending_by_calculation_with_http_info(
         self,
-        pending_by_calculation_request: Annotated[PendingByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        pending_by_calculation_request: Annotated[PendingByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5343,15 +5343,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PendingOrdersCalculated]:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param pending_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param pending_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type pending_by_calculation_request: PendingByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5406,9 +5406,9 @@ class KlimApi:
     @validate_call
     def pending_by_calculation_without_preload_content(
         self,
-        pending_by_calculation_request: Annotated[PendingByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**.")],
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        pending_by_calculation_request: Annotated[PendingByCalculationRequest, Field(description="Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**.")],
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5422,15 +5422,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By calculation
+        """By Calculation
 
         **IMPORTANT:** Calling this route using API keys created in the **sandbox mode** is returning **random numbers** instead of **real calculations**.
 
-        :param pending_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](/resources/factors)**. In this example it is just **Travel by Car**. (required)
+        :param pending_by_calculation_request: Choose up to 100 Elements from the **[Calculation Options](https://klimapi.com/resources/factors)**. In this example it is just **Travel by Car**. (required)
         :type pending_by_calculation_request: PendingByCalculationRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5562,8 +5562,8 @@ class KlimApi:
     def pending_by_carbon(
         self,
         pending_by_carbon_request: PendingByCarbonRequest,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5577,15 +5577,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PendingOrders:
-        """By carbon
+        """By Carbon
 
         Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
 
         :param pending_by_carbon_request: (required)
         :type pending_by_carbon_request: PendingByCarbonRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5641,8 +5641,8 @@ class KlimApi:
     def pending_by_carbon_with_http_info(
         self,
         pending_by_carbon_request: PendingByCarbonRequest,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5656,15 +5656,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PendingOrders]:
-        """By carbon
+        """By Carbon
 
         Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
 
         :param pending_by_carbon_request: (required)
         :type pending_by_carbon_request: PendingByCarbonRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5720,8 +5720,8 @@ class KlimApi:
     def pending_by_carbon_without_preload_content(
         self,
         pending_by_carbon_request: PendingByCarbonRequest,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5735,15 +5735,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By carbon
+        """By Carbon
 
         Here you can create an Order by kilogram CO2e. Please note the request limits of your API key, normally it is 15000kg per request. We are happy to increase the limits on request, please write us a message.
 
         :param pending_by_carbon_request: (required)
         :type pending_by_carbon_request: PendingByCarbonRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5875,8 +5875,8 @@ class KlimApi:
     def pending_by_price(
         self,
         pending_by_price_request: PendingByPriceRequest,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5890,15 +5890,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> PendingOrders:
-        """By price
+        """By Price
 
         Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
 
         :param pending_by_price_request: (required)
         :type pending_by_price_request: PendingByPriceRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -5954,8 +5954,8 @@ class KlimApi:
     def pending_by_price_with_http_info(
         self,
         pending_by_price_request: PendingByPriceRequest,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -5969,15 +5969,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[PendingOrders]:
-        """By price
+        """By Price
 
         Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
 
         :param pending_by_price_request: (required)
         :type pending_by_price_request: PendingByPriceRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6033,8 +6033,8 @@ class KlimApi:
     def pending_by_price_without_preload_content(
         self,
         pending_by_price_request: PendingByPriceRequest,
-        locale: Optional[StrictStr] = None,
-        currency: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
+        currency: Annotated[Optional[StrictStr], Field(description="The currency of the returned offset price")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6048,15 +6048,15 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """By price
+        """By Price
 
         Here you can create an Order by price. Please note the request limits of your API key, normally it is 250€ per request. We are happy to increase the limits on request, please write us a message.
 
         :param pending_by_price_request: (required)
         :type pending_by_price_request: PendingByPriceRequest
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
-        :param currency:
+        :param currency: The currency of the returned offset price
         :type currency: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6189,7 +6189,7 @@ class KlimApi:
         self,
         order_id: Annotated[StrictStr, Field(description="The order id specified in the Order")],
         process_order: ProcessOrder,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6203,7 +6203,7 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Order:
-        """Process pending Order
+        """Process Pending Order
 
         You accepted the given order. You may now show a confirmation or provide the link to the certificate.
 
@@ -6211,7 +6211,7 @@ class KlimApi:
         :type order_id: str
         :param process_order: (required)
         :type process_order: ProcessOrder
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6266,7 +6266,7 @@ class KlimApi:
         self,
         order_id: Annotated[StrictStr, Field(description="The order id specified in the Order")],
         process_order: ProcessOrder,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6280,7 +6280,7 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Order]:
-        """Process pending Order
+        """Process Pending Order
 
         You accepted the given order. You may now show a confirmation or provide the link to the certificate.
 
@@ -6288,7 +6288,7 @@ class KlimApi:
         :type order_id: str
         :param process_order: (required)
         :type process_order: ProcessOrder
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6343,7 +6343,7 @@ class KlimApi:
         self,
         order_id: Annotated[StrictStr, Field(description="The order id specified in the Order")],
         process_order: ProcessOrder,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6357,7 +6357,7 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Process pending Order
+        """Process Pending Order
 
         You accepted the given order. You may now show a confirmation or provide the link to the certificate.
 
@@ -6365,7 +6365,7 @@ class KlimApi:
         :type order_id: str
         :param process_order: (required)
         :type process_order: ProcessOrder
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6494,10 +6494,10 @@ class KlimApi:
     @validate_call
     def process_cart(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         order_id: Annotated[StrictStr, Field(description="The order id specified in the Order")],
         process_order: ProcessOrder,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6511,17 +6511,17 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Order:
-        """Process cart
+        """Process Cart
 
-        
+        Process a given cart to offset the cart's emissions
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param order_id: The order id specified in the Order (required)
         :type order_id: str
         :param process_order: (required)
         :type process_order: ProcessOrder
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6575,10 +6575,10 @@ class KlimApi:
     @validate_call
     def process_cart_with_http_info(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         order_id: Annotated[StrictStr, Field(description="The order id specified in the Order")],
         process_order: ProcessOrder,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6592,17 +6592,17 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Order]:
-        """Process cart
+        """Process Cart
 
-        
+        Process a given cart to offset the cart's emissions
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param order_id: The order id specified in the Order (required)
         :type order_id: str
         :param process_order: (required)
         :type process_order: ProcessOrder
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -6656,10 +6656,10 @@ class KlimApi:
     @validate_call
     def process_cart_without_preload_content(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         order_id: Annotated[StrictStr, Field(description="The order id specified in the Order")],
         process_order: ProcessOrder,
-        locale: Optional[StrictStr] = None,
+        locale: Annotated[Optional[StrictStr], Field(description="The locale in which the response should be returned")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -6673,17 +6673,17 @@ class KlimApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Process cart
+        """Process Cart
 
-        
+        Process a given cart to offset the cart's emissions
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param order_id: The order id specified in the Order (required)
         :type order_id: str
         :param process_order: (required)
         :type process_order: ProcessOrder
-        :param locale:
+        :param locale: The locale in which the response should be returned
         :type locale: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -7348,7 +7348,7 @@ class KlimApi:
     @validate_call
     def sync_bulk_store(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         product: List[Product],
         _request_timeout: Union[
             None,
@@ -7367,7 +7367,7 @@ class KlimApi:
 
         Use the method to sync multiple products from the given store to our database.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param product: (required)
         :type product: List[Product]
@@ -7423,7 +7423,7 @@ class KlimApi:
     @validate_call
     def sync_bulk_store_with_http_info(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         product: List[Product],
         _request_timeout: Union[
             None,
@@ -7442,7 +7442,7 @@ class KlimApi:
 
         Use the method to sync multiple products from the given store to our database.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param product: (required)
         :type product: List[Product]
@@ -7498,7 +7498,7 @@ class KlimApi:
     @validate_call
     def sync_bulk_store_without_preload_content(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         product: List[Product],
         _request_timeout: Union[
             None,
@@ -7517,7 +7517,7 @@ class KlimApi:
 
         Use the method to sync multiple products from the given store to our database.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param product: (required)
         :type product: List[Product]
@@ -7641,7 +7641,7 @@ class KlimApi:
     @validate_call
     def sync_store(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         product: Product,
         _request_timeout: Union[
             None,
@@ -7660,7 +7660,7 @@ class KlimApi:
 
         Use the method to sync a single product from the given store to our database.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param product: (required)
         :type product: Product
@@ -7715,7 +7715,7 @@ class KlimApi:
     @validate_call
     def sync_store_with_http_info(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         product: Product,
         _request_timeout: Union[
             None,
@@ -7734,7 +7734,7 @@ class KlimApi:
 
         Use the method to sync a single product from the given store to our database.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param product: (required)
         :type product: Product
@@ -7789,7 +7789,7 @@ class KlimApi:
     @validate_call
     def sync_store_without_preload_content(
         self,
-        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](/dashboard/ecommerce)** to get a store ident")],
+        store_ident: Annotated[StrictStr, Field(description="Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident")],
         product: Product,
         _request_timeout: Union[
             None,
@@ -7808,7 +7808,7 @@ class KlimApi:
 
         Use the method to sync a single product from the given store to our database.
 
-        :param store_ident: Setup a new store **[here](/dashboard/ecommerce)** to get a store ident (required)
+        :param store_ident: Setup a new store **[here](https://klimapi.com/dashboard/ecommerce)** to get a store ident (required)
         :type store_ident: str
         :param product: (required)
         :type product: Product

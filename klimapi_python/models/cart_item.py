@@ -25,7 +25,7 @@ from typing_extensions import Self
 
 class CartItem(BaseModel):
     """
-    CartItem
+    An item in the cart of a specific customer
     """ # noqa: E501
     amount: StrictInt = Field(description="The amount of the product in the cart")
     total: Union[StrictFloat, StrictInt] = Field(description="The total price of the product in the cart")

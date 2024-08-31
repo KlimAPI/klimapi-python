@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **cancel_url** | **str** | The URL the customer is redirected to after a failed or aborted compensation. | 
 **order_count** | **int** | The amount of pending Orders you want to receive. This is especially useful if you want to offer your customers several different projects for their compensation. | [optional] [default to 1]
 **metadata** | **Dict[str, str]** | Add additional queryable information to the order as key-value pairs | [optional] 
+**payment_type** | **str** | With `default` we will automatically provide payment methods based on the customers location, use `invoice` to enable payment by invoice for the given link. Please note that `invoice` bank transfer is only available if **X-CURRENCY** is set to `EUR`. The invoice can always be paid by card. | [optional] [default to 'default']
 
 ## Example
 

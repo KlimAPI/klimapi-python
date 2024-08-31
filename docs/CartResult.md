@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**kg_co2e** | **float** | The total amount of kg CO&lt;sub&gt;2&lt;/sub&gt;e calculated. | [optional] 
+**kg_co2e** | **float** | The total amount of kg CO<sub>2</sub>e calculated. | [optional] 
 **settings** | [**CartResultSettings**](CartResultSettings.md) |  | [optional] 
 **calculation_results** | [**List[CartResultCalculationResultsInner]**](CartResultCalculationResultsInner.md) | The calculation results | [optional] 
 **orders** | [**List[PendingOrder]**](PendingOrder.md) |  | [optional] 
